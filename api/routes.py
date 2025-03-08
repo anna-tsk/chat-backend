@@ -23,7 +23,6 @@ async def send_message(request: MessageRequest, db: AsyncSession = Depends(get_d
     message = await insert_message(db, request.conversation_id, request.sender, request.text, request.turn_order)
     return {"message_id": str(message.id)}
 
-
 from fastapi import Query
 from database.crud import get_messages
 
